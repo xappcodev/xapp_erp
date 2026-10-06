@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="xapp_demo_sale_order" model="sale.order">
+            <field name="partner_id" ref="base.res_partner_12"/>
+            <field name="state">draft</field>
+        </record>
+        
+        <record id="xapp_demo_sale_order_line_1" model="sale.order.line">
+            <field name="order_id" ref="xapp_demo_sale_order"/>
+            <field name="name">Custom E-Commerce Platform
+Design, development, and testing of a complete e-commerce solution including payment gateway integration, user dashboard, and admin panel.</field>
+            <field name="product_uom_qty">1</field>
+            <field name="price_unit">150000.0</field>
+        </record>
+        
+        <record id="xapp_demo_sale_order_line_2" model="sale.order.line">
+            <field name="order_id" ref="xapp_demo_sale_order"/>
+            <field name="name">Cloud VPS Hosting (Annual)
+1-year hosting on a high-performance VPS (4 vCPU, 8GB RAM, 100GB NVMe SSD).</field>
+            <field name="product_uom_qty">1</field>
+            <field name="price_unit">25000.0</field>
+        </record>
+
+        <record id="xapp_demo_payment_plan_1" model="sale.order.payment.plan">
+            <field name="order_id" ref="xapp_demo_sale_order"/>
+            <field name="name">Project Kickoff</field>
+            <field name="description">Advance payment to initiate the project.</field>
+            <field name="percentage">30</field>
+        </record>
+        <record id="xapp_demo_payment_plan_2" model="sale.order.payment.plan">
+            <field name="order_id" ref="xapp_demo_sale_order"/>
+            <field name="name">Design Approval</field>
+            <field name="description">Upon sign-off of UI/UX mockups.</field>
+            <field name="percentage">30</field>
+        </record>
+        <record id="xapp_demo_payment_plan_3" model="sale.order.payment.plan">
+            <field name="order_id" ref="xapp_demo_sale_order"/>
+            <field name="name">Development Complete</field>
+            <field name="description">Upon successful testing on staging server.</field>
+            <field name="percentage">30</field>
+        </record>
+        <record id="xapp_demo_payment_plan_4" model="sale.order.payment.plan">
+            <field name="order_id" ref="xapp_demo_sale_order"/>
+            <field name="name">Launch &amp; Handover</field>
+            <field name="description">Prior to going live and codebase handover.</field>
+            <field name="percentage">10</field>
+        </record>
+    </data>
+</odoo>

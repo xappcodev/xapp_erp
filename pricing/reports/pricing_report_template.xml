@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_sale_pricing_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.basic_layout">
+                    <div class="page" style="font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a2e; font-size: 13px; line-height: 1.6;">
+                        <style>
+                            table { page-break-inside: auto; }
+                            tr { page-break-inside: avoid; page-break-after: auto; }
+                            thead { display: table-header-group; }
+                            tfoot { display: table-footer-group; }
+                        </style>
+
+                        <!-- HEADER WITH LOGO -->
+                        <div class="row" style="margin-bottom: 30px; align-items: center;">
+                            <div class="col-8">
+                                <h2 style="color: #62348D; font-weight: bold; margin-bottom: 0; font-size: 24px;">Web and Software Development Pricing</h2>
+                                <div style="color: #555; font-size: 14px;">JAN|2026</div>
+                            </div>
+                            <div class="col-4" style="text-align: right;">
+                                <img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)" style="max-height: 80px;" alt="Company Logo"/>
+                            </div>
+                        </div>
+
+                        <!-- ══════════════════════════════════════════════════
+                             SECTION 1 — WEBSITE DEVELOPMENT PRICING
+                        ══════════════════════════════════════════════════ -->
+                        <div style="margin-bottom: 24px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="width: 4px; height: 20px; background: #62348D; border-radius: 2px; margin-right: 10px;"></div>
+                                <span style="font-size: 15px; font-weight: 700; color: #62348D; text-transform: uppercase; letter-spacing: 0.5px;">1. Website Development Pricing</span>
+                            </div>
+
+                            <table class="table" style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                                <thead>
+                                    <tr style="background: #62348D; color: #ffffff;">
+                                        <th style="padding: 9px 10px; text-align: left; border: 1px solid #5a2e80; font-weight: 600; width: 22%;"># Website Category</th>
+                                        <th style="padding: 9px 10px; text-align: left; border: 1px solid #5a2e80; font-weight: 600; width: 20%;">Cost Range (INR)</th>
+                                        <th style="padding: 9px 10px; text-align: left; border: 1px solid #5a2e80; font-weight: 600; width: 22%;">Timeline</th>
+                                        <th style="padding: 9px 10px; text-align: left; border: 1px solid #5a2e80; font-weight: 600;">Best Suited For</th>
+                                        <th style="padding: 9px 10px; text-align: left; border: 1px solid #5a2e80; font-weight: 600; width: 18%;">Key Features</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background: #faf9ff;">
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;"><strong>1. Static Website</strong><br/><span style="font-size: 11px; color: #888;">Basic HTML/CSS</span></td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top; color: #3a1a5e; font-weight: 600;">₹8,500 – ₹25,000</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;">2 – 3 weeks</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;">Students, freelancers, small local shops, portfolio sites</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top; font-size: 11px;">1-3 pages, contact form, Basic UI</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;"><strong>2. Small Business </strong><br/><span style="font-size: 11px; color: #888;">HTML/CSS/Basic JS</span></td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top; color: #3a1a5e; font-weight: 600;">₹25,000 – ₹75,000</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;">5 – 7 weeks</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;">Needing visibility, Service businesses, Consultants</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top; font-size: 11px;">2 - 5 pages, contact form,Standard UI,Gsheet integration, Desktop/Mobile responsive</td>
+                                    </tr>
+                                    <tr style="background: #faf9ff;">
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;"><strong>3. Professional Business</strong><br/><span style="font-size: 11px; color: #888;">Custom Design + Dev</span></td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top; color: #3a1a5e; font-weight: 600;">₹75,000 – ₹5,00,000</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;">4 – 10 weeks</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;">Revenue-focused brands,Growing brands, multi-location businesses</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top; font-size: 11px;">10 - 15 pages,Custom UI, Animation, advanced integrations(E/W/G)</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;"><strong>4. Basic eCommerce</strong><br/><span style="font-size: 11px; color: #888;">WooCommerce/Shopify</span></td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top; color: #3a1a5e; font-weight: 600;">₹17,500 – ₹1,25,000</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;">5 – 7 weeks</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;">Startups testing online sales, small product catalogs</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top; font-size: 11px;">Product pages, cart, payment gateway, order emails</td>
+                                    </tr>
+                                    <tr style="background: #faf9ff;">
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;"><strong>5. Advanced eCommerce</strong><br/><span style="font-size: 11px; color: #888;">Custom Platform</span></td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top; color: #3a1a5e; font-weight: 600;">₹1,25,000 – ₹5,00,000+</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;">8 – 16 weeks</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;">High-traffic stores, multi-vendor, B2B/B2C</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top; font-size: 11px;">Inventory mgmt, GST invoicing, loyalty, advanced search</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;"><strong>6. Enterprise / Web App</strong><br/><span style="font-size: 11px; color: #888;">SaaS / ERP / Marketplace</span></td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top; color: #3a1a5e; font-weight: 600;">₹5,00,000 – ₹25,00,000+</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;">12 – 24+ weeks</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top;">Enterprise scale, SaaS products, marketplaces, ERP portals</td>
+                                        <td style="padding: 8px 10px; border: 1px solid #e0d6f0; vertical-align: top; font-size: 11px;">Role-based access, custom modules, real-time dashboards, CI/CD</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- ══════════════════════════════════════════════════
+                             SECTION 2 — FACTORS AFFECTING COST
+                        ══════════════════════════════════════════════════ -->
+                        <div style="margin-bottom: 24px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="width: 4px; height: 20px; background: #1a6fc4; border-radius: 2px; margin-right: 10px;"></div>
+                                <span style="font-size: 15px; font-weight: 700; color: #1a6fc4; text-transform: uppercase; letter-spacing: 0.5px;">2. Factors That Affect Development Cost</span>
+                            </div>
+
+                            <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                                <thead>
+                                    <tr style="background: #1a6fc4; color: #ffffff;">
+                                        <th style="padding: 8px 10px; border: 1px solid #155ca0; text-align: left; width: 22%;">Factor</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #155ca0; text-align: left;">Low Cost Scenario</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #155ca0; text-align: left;">High Cost Scenario</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #155ca0; text-align: left; width: 20%;">Est. Cost Impact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background: #f0f7ff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;"><strong>Design Complexity</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">Template-based, minimal customization</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">Fully custom UI/UX, motion design, branding kit</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5; color: #1a6fc4; font-weight: 600;">+₹10K – ₹2,00,000</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;"><strong>Number of Pages</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">5–10 standard pages</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">50+ pages with unique layouts each</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5; color: #1a6fc4; font-weight: 600;">₹500 – ₹5,000/page</td>
+                                    </tr>
+                                    <tr style="background: #f0f7ff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;"><strong>Features &amp; Functionality</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">Contact form, gallery, map embed</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">Booking engine, live chat, API integrations, dashboards</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5; color: #1a6fc4; font-weight: 600;">+₹5K – ₹5,00,000</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;"><strong>Technology Stack</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">WordPress + free theme</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">React/Next.js + Node.js + PostgreSQL microservices</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5; color: #1a6fc4; font-weight: 600;">+₹20K – ₹3,00,000</td>
+                                    </tr>
+                                    <tr style="background: #f0f7ff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;"><strong>Content Requirements</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">Client provides all content</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">Copywriting, photography, product descriptions by agency</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5; color: #1a6fc4; font-weight: 600;">+₹5K – ₹50,000</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;"><strong>SEO &amp; Performance</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">Basic on-page SEO setup</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">Core Web Vitals, schema markup, technical SEO audit</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5; color: #1a6fc4; font-weight: 600;">+₹5K – ₹30,000</td>
+                                    </tr>
+                                    <tr style="background: #f0f7ff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;"><strong>Multilingual Support</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">Single language (English)</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">3+ languages with RTL support and translation</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5; color: #1a6fc4; font-weight: 600;">+₹8K – ₹40,000</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;"><strong>Third-Party Integrations</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">Basic payment gateway (Razorpay/PayU)</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5;">CRM, ERP, SMS gateway, WhatsApp API, shipping APIs</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #cde0f5; color: #1a6fc4; font-weight: 600;">+₹5K – ₹1,50,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- ══════════════════════════════════════════════════
+                             SECTION 3 — HOSTING CHARGES
+                        ══════════════════════════════════════════════════ -->
+                        <div style="margin-bottom: 24px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="width: 4px; height: 20px; background: #0f9b6a; border-radius: 2px; margin-right: 10px;"></div>
+                                <span style="font-size: 15px; font-weight: 700; color: #0f9b6a; text-transform: uppercase; letter-spacing: 0.5px;">3. Hosting Charges (Annual)</span>
+                            </div>
+
+                            <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                                <thead>
+                                    <tr style="background: #0f9b6a; color: #ffffff;">
+                                        <th style="padding: 8px 10px; border: 1px solid #0a7a55; text-align: left; width: 20%;">Hosting Type</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #0a7a55; text-align: left; width: 20%;">Annual Cost (INR)</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #0a7a55; text-align: left;">Specifications</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #0a7a55; text-align: left; width: 22%;">Best For</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background: #f0fdf7;">
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;"><strong>Shared Hosting</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5; color: #0a7a55; font-weight: 600;">₹1,200 – ₹4,500/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;">5–10 GB SSD, 10–50 GB bandwidth, 1–5 websites, cPanel</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;">Static sites, blogs, low-traffic informational sites</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;"><strong>Business Hosting</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5; color: #0a7a55; font-weight: 600;">₹4,500 – ₹15,000/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;">20–50 GB SSD, unmetered bandwidth, SSL included, daily backup</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;">Business CMS sites, small eCommerce (&lt;500 products)</td>
+                                    </tr>
+                                    <tr style="background: #f0fdf7;">
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;"><strong>VPS (Virtual Private)</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5; color: #0a7a55; font-weight: 600;">₹12,000 – ₹60,000/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;">2–8 vCPU, 4–32 GB RAM, 100–500 GB SSD, root access</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;">Medium eCommerce, custom web apps, 1K–10K daily visitors</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;"><strong>Dedicated Server</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5; color: #0a7a55; font-weight: 600;">₹60,000 – ₹3,00,000/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;">8–32 cores, 64–256 GB RAM, 2–10 TB HDD/SSD, managed options</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;">Enterprise platforms, high traffic, data-heavy applications</td>
+                                    </tr>
+                                    <tr style="background: #f0fdf7;">
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;"><strong>Cloud Hosting (AWS/GCP/Azure)</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5; color: #0a7a55; font-weight: 600;">₹18,000 – ₹5,00,000+/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;">Pay-as-you-go, auto-scaling, 99.99% SLA, CDN included</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;">SaaS, enterprise apps, dynamic traffic, global delivery</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;"><strong>Managed WordPress</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5; color: #0a7a55; font-weight: 600;">₹6,000 – ₹30,000/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;">Auto-updates, staging env, built-in CDN, malware scans</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;">WordPress sites needing performance + hands-off management</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- SSL & Domain row -->
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px;">
+                                <thead>
+                                    <tr style="background: #d4f2e7; color: #054d34;">
+                                        <th style="padding: 7px 10px; border: 1px solid #b7e8d5; text-align: left;" colspan="4">Additional Hosting-Related Costs</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background: #f8fffe;">
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5; width: 20%;"><strong>Domain Registration</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5; width: 20%; color: #0a7a55; font-weight: 600;">₹500 – ₹3,000/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;" colspan="2">.in ≈ ₹699/yr · .com ≈ ₹999/yr · .co.in ≈ ₹499/yr · Premium domains vary widely</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;"><strong>SSL Certificate</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5; color: #0a7a55; font-weight: 600;">₹0 – ₹20,000/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;" colspan="2">Free (Let's Encrypt DV) · Paid DV ₹1,500/yr · OV/EV ₹8,000–₹20,000/yr</td>
+                                    </tr>
+                                    <tr style="background: #f8fffe;">
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;"><strong>CDN Services</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5; color: #0a7a55; font-weight: 600;">₹0 – ₹25,000/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;" colspan="2">Cloudflare Free/Pro · Bunny CDN ₹1,500+/yr · AWS CloudFront usage-based</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;"><strong>Business Email</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5; color: #0a7a55; font-weight: 600;">₹1,200 – ₹15,000/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #b7e8d5;" colspan="2">Google Workspace ₹1,344/user/yr · Microsoft 365 ₹1,250/user/yr · Zoho Mail ₹0–₹600/user/yr</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- page break hint for PDF rendering -->
+                        <div style="page-break-before: auto;"></div>
+
+                        <!-- ══════════════════════════════════════════════════
+                             SECTION 4 — MAINTENANCE CHARGES
+                        ══════════════════════════════════════════════════ -->
+                        <div style="margin-bottom: 24px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="width: 4px; height: 20px; background: #e07b00; border-radius: 2px; margin-right: 10px;"></div>
+                                <span style="font-size: 15px; font-weight: 700; color: #e07b00; text-transform: uppercase; letter-spacing: 0.5px;">4. Maintenance &amp; Support Charges</span>
+                            </div>
+
+                            <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                                <thead>
+                                    <tr style="background: #e07b00; color: #ffffff;">
+                                        <th style="padding: 8px 10px; border: 1px solid #b86300; text-align: left; width: 22%;">Maintenance Plan</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #b86300; text-align: left; width: 18%;">Annual Cost</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #b86300; text-align: left;">What's Included</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #b86300; text-align: left; width: 18%;">Response Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background: #fffaf0;">
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8;"><strong>Basic AMC</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8; color: #b86300; font-weight: 600;">₹6,000 – ₹15,000/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8;">Plugin/CMS updates, uptime monitoring, monthly backup, minor bug fixes (up to 2 hrs/month)</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8;">48–72 hours</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8;"><strong>Standard AMC</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8; color: #b86300; font-weight: 600;">₹15,000 – ₹40,000/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8;">All basic + security patches, weekly backups, performance checks, content updates (up to 5 hrs/month), SSL renewal</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8;">24 hours</td>
+                                    </tr>
+                                    <tr style="background: #fffaf0;">
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8;"><strong>Premium AMC</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8; color: #b86300; font-weight: 600;">₹40,000 – ₹1,20,000/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8;">All standard + dedicated account manager, daily backups, security audit, SEO monitoring, A/B testing support, priority tickets (up to 12 hrs/month)</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8;">4–8 hours</td>
+                                    </tr>
+                                    <tr style="background: #ffffff;">
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8;"><strong>Enterprise SLA</strong></td>
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8; color: #b86300; font-weight: 600;">₹1,20,000+/yr</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8;">All premium + 24/7 monitoring, dedicated DevOps engineer, disaster recovery, SLA guarantee (99.9% uptime), penetration testing, quarterly reports</td>
+                                        <td style="padding: 7px 10px; border: 1px solid #f5d9a8;">1 hour / 24×7</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- ══════════════════════════════════════════════════
+                             SECTION 5 — ADD-ON SERVICES
+                        ══════════════════════════════════════════════════ -->
+                        <div style="margin-bottom: 24px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="width: 4px; height: 20px; background: #c0392b; border-radius: 2px; margin-right: 10px;"></div>
+                                <span style="font-size: 15px; font-weight: 700; color: #c0392b; text-transform: uppercase; letter-spacing: 0.5px;">5. Add-On &amp; Optional Services</span>
+                            </div>
+
+                            <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                                <thead>
+                                    <tr style="background: #c0392b; color: #ffffff;">
+                                        <th style="padding: 8px 10px; border: 1px solid #a93226; text-align: left; width: 30%;">Service</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #a93226; text-align: left; width: 22%;">Typical Cost (INR)</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #a93226; text-align: left;">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background: #fdf5f5;"><td style="padding: 6px 10px; border: 1px solid #f5c6c6;"><strong>Logo &amp; Brand Identity Design</strong></td><td style="padding: 6px 10px; border: 1px solid #f5c6c6; color: #a93226; font-weight: 600;">₹5,000 – ₹50,000</td><td style="padding: 6px 10px; border: 1px solid #f5c6c6;">Logo, colour palette, typography guide, brand style manual</td></tr>
+                                    <tr style="background: #fff;"><td style="padding: 6px 10px; border: 1px solid #f5c6c6;"><strong>UI/UX Prototyping (Figma)</strong></td><td style="padding: 6px 10px; border: 1px solid #f5c6c6; color: #a93226; font-weight: 600;">₹8,000 – ₹80,000</td><td style="padding: 6px 10px; border: 1px solid #f5c6c6;">Wireframes, clickable prototypes, user journey mapping</td></tr>
+                                    <tr style="background: #fdf5f5;"><td style="padding: 6px 10px; border: 1px solid #f5c6c6;"><strong>SEO Package (Monthly)</strong></td><td style="padding: 6px 10px; border: 1px solid #f5c6c6; color: #a93226; font-weight: 600;">₹5,000 – ₹50,000/mo</td><td style="padding: 6px 10px; border: 1px solid #f5c6c6;">Keyword research, on-page &amp; off-page SEO, backlink building, monthly ranking reports</td></tr>
+                                    <tr style="background: #fff;"><td style="padding: 6px 10px; border: 1px solid #f5c6c6;"><strong>Google Ads Management</strong></td><td style="padding: 6px 10px; border: 1px solid #f5c6c6; color: #a93226; font-weight: 600;">₹7,000 – ₹30,000/mo</td><td style="padding: 6px 10px; border: 1px solid #f5c6c6;">Campaign setup, ad copywriting, A/B testing, conversion tracking (exclusive of ad spend)</td></tr>
+                                    <tr style="background: #fdf5f5;"><td style="padding: 6px 10px; border: 1px solid #f5c6c6;"><strong>Social Media Management</strong></td><td style="padding: 6px 10px; border: 1px solid #f5c6c6; color: #a93226; font-weight: 600;">₹8,000 – ₹40,000/mo</td><td style="padding: 6px 10px; border: 1px solid #f5c6c6;">Content calendar, post creation, engagement monitoring (2–3 platforms)</td></tr>
+                                    <tr style="background: #fff;"><td style="padding: 6px 10px; border: 1px solid #f5c6c6;"><strong>Speed Optimisation</strong></td><td style="padding: 6px 10px; border: 1px solid #f5c6c6; color: #a93226; font-weight: 600;">₹3,000 – ₹20,000</td><td style="padding: 6px 10px; border: 1px solid #f5c6c6;">Image compression, caching, minification, Core Web Vitals improvement</td></tr>
+                                    <tr style="background: #fdf5f5;"><td style="padding: 6px 10px; border: 1px solid #f5c6c6;"><strong>Security Hardening</strong></td><td style="padding: 6px 10px; border: 1px solid #f5c6c6; color: #a93226; font-weight: 600;">₹4,000 – ₹25,000</td><td style="padding: 6px 10px; border: 1px solid #f5c6c6;">Firewall setup, malware removal, two-factor auth, VAPT report</td></tr>
+                                    <tr style="background: #fff;"><td style="padding: 6px 10px; border: 1px solid #f5c6c6;"><strong>Payment Gateway Integration</strong></td><td style="padding: 6px 10px; border: 1px solid #f5c6c6; color: #a93226; font-weight: 600;">₹3,000 – ₹15,000</td><td style="padding: 6px 10px; border: 1px solid #f5c6c6;">Razorpay / PayU / Cashfree / CCAvenue — includes test + live configuration</td></tr>
+                                    <tr style="background: #fdf5f5;"><td style="padding: 6px 10px; border: 1px solid #f5c6c6;"><strong>Mobile App Development</strong></td><td style="padding: 6px 10px; border: 1px solid #f5c6c6; color: #a93226; font-weight: 600;">₹1,50,000 – ₹20,00,000</td><td style="padding: 6px 10px; border: 1px solid #f5c6c6;">React Native / Flutter cross-platform or native iOS + Android</td></tr>
+                                    <tr style="background: #fff;"><td style="padding: 6px 10px; border: 1px solid #f5c6c6;"><strong>WhatsApp Business API</strong></td><td style="padding: 6px 10px; border: 1px solid #f5c6c6; color: #a93226; font-weight: 600;">₹5,000 – ₹25,000 setup</td><td style="padding: 6px 10px; border: 1px solid #f5c6c6;">Chatbot flows, order alerts, OTP, broadcast (+ per-message charges apply)</td></tr>
+                                    <tr style="background: #fdf5f5;"><td style="padding: 6px 10px; border: 1px solid #f5c6c6;"><strong>Training &amp; Handover</strong></td><td style="padding: 6px 10px; border: 1px solid #f5c6c6; color: #a93226; font-weight: 600;">₹2,000 – ₹12,000</td><td style="padding: 6px 10px; border: 1px solid #f5c6c6;">CMS usage training, video tutorials, documentation handover</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- ══════════════════════════════════════════════════
+                             SECTION 6 — TOTAL COST ESTIMATOR
+                        ══════════════════════════════════════════════════ -->
+                        <div style="margin-bottom: 24px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="width: 4px; height: 20px; background: #62348D; border-radius: 2px; margin-right: 10px;"></div>
+                                <span style="font-size: 15px; font-weight: 700; color: #62348D; text-transform: uppercase; letter-spacing: 0.5px;">6. Typical Total Cost Estimates (Year 1)</span>
+                            </div>
+                            <p style="font-size: 12px; color: #555; margin-bottom: 10px;">These consolidated estimates include development + hosting + domain + SSL + basic maintenance for the first year.</p>
+
+                            <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                                <thead>
+                                    <tr style="background: #62348D; color: #ffffff;">
+                                        <th style="padding: 8px 10px; border: 1px solid #5a2e80; text-align: left; width: 28%;">Business Profile</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #5a2e80; text-align: left;">Dev Cost</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #5a2e80; text-align: left;">Hosting + Domain</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #5a2e80; text-align: left;">Maintenance</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #5a2e80; text-align: left; background: #3a1a5e;">Total Year 1 (INR)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background: #faf9ff;"><td style="padding: 7px 10px; border: 1px solid #e0d6f0;"><strong>Freelancer / Student Portfolio</strong></td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹7,500 – ₹20,000</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹2,000 – ₹5,000</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">Minimal / DIY</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0; font-weight: 700; color: #3a1a5e;">₹10,000 – ₹26,000</td></tr>
+                                    <tr style="background: #ffffff;"><td style="padding: 7px 10px; border: 1px solid #e0d6f0;"><strong>Local Small Business</strong></td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹15,000 – ₹50,000</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹5,000 – ₹10,000</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹6,000 – ₹12,000</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0; font-weight: 700; color: #3a1a5e;">₹26,000 – ₹72,000</td></tr>
+                                    <tr style="background: #faf9ff;"><td style="padding: 7px 10px; border: 1px solid #e0d6f0;"><strong>Growing Mid-Size Company</strong></td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹75,000 – ₹3,00,000</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹15,000 – ₹40,000</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹20,000 – ₹50,000</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0; font-weight: 700; color: #3a1a5e;">₹1,10,000 – ₹3,90,000</td></tr>
+                                    <tr style="background: #ffffff;"><td style="padding: 7px 10px; border: 1px solid #e0d6f0;"><strong>eCommerce Launch</strong></td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹50,000 – ₹2,00,000</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹20,000 – ₹60,000</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹15,000 – ₹40,000</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0; font-weight: 700; color: #3a1a5e;">₹85,000 – ₹3,00,000</td></tr>
+                                    <tr style="background: #faf9ff;"><td style="padding: 7px 10px; border: 1px solid #e0d6f0;"><strong>Enterprise / SaaS Platform</strong></td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹5,00,000 – ₹25,00,000+</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹60,000 – ₹5,00,000</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0;">₹1,20,000 – ₹5,00,000</td><td style="padding: 7px 10px; border: 1px solid #e0d6f0; font-weight: 700; color: #3a1a5e;">₹6,80,000 – ₹35,00,000+</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- ══════════════════════════════════════════════════
+                             SECTION 7 — PAYMENT TERMS & NOTES
+                        ══════════════════════════════════════════════════ -->
+                        <div style="margin-bottom: 24px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="width: 4px; height: 20px; background: #555; border-radius: 2px; margin-right: 10px;"></div>
+                                <span style="font-size: 15px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 0.5px;">7. Payment Terms &amp; Process</span>
+                            </div>
+
+                            <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                                <thead>
+                                    <tr style="background: #444; color: #fff;">
+                                        <th style="padding: 8px 10px; border: 1px solid #333; text-align: left; width: 25%;">Milestone</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #333; text-align: left; width: 15%;">Payment %</th>
+                                        <th style="padding: 8px 10px; border: 1px solid #333; text-align: left;">Deliverables at This Stage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background: #f7f7f7;"><td style="padding: 7px 10px; border: 1px solid #ddd;"><strong>Project Kickoff</strong></td><td style="padding: 7px 10px; border: 1px solid #ddd; font-weight: 600;">30%</td><td style="padding: 7px 10px; border: 1px solid #ddd;">Signed agreement, project brief, wireframes/sitemap approval, hosting setup</td></tr>
+                                    <tr style="background: #fff;"><td style="padding: 7px 10px; border: 1px solid #ddd;"><strong>Design Approval</strong></td><td style="padding: 7px 10px; border: 1px solid #ddd; font-weight: 600;">30%</td><td style="padding: 7px 10px; border: 1px solid #ddd;">UI mockups approved, homepage &amp; inner pages design sign-off</td></tr>
+                                    <tr style="background: #f7f7f7;"><td style="padding: 7px 10px; border: 1px solid #ddd;"><strong>Development Complete</strong></td><td style="padding: 7px 10px; border: 1px solid #ddd; font-weight: 600;">30%</td><td style="padding: 7px 10px; border: 1px solid #ddd;">Fully functional website on staging, QA testing, client review round</td></tr>
+                                    <tr style="background: #fff;"><td style="padding: 7px 10px; border: 1px solid #ddd;"><strong>Final Launch &amp; Handover</strong></td><td style="padding: 7px 10px; border: 1px solid #ddd; font-weight: 600;">10%</td><td style="padding: 7px 10px; border: 1px solid #ddd;">Live deployment, training session, credentials handover, 30-day warranty</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- ══════════════════════════════════════════════════
+                             DISCLAIMER & FOOTER
+                        ══════════════════════════════════════════════════ -->
+                        <div style="background: #f8f6fb; border: 1px solid #e0d6f0; border-radius: 8px; padding: 14px 16px; margin-bottom: 20px;">
+                            <p style="font-size: 11px; color: #555; margin: 0 0 6px 0;"><strong style="color: #62348D;">Important Notes &amp; Disclaimer:</strong></p>
+                            <ul style="font-size: 11px; color: #666; margin: 0; padding-left: 18px; line-height: 1.8;">
+                                <li>All prices listed are indicative ranges for the Indian market as of 2026 and may vary based on agency size, location, and specific project requirements.</li>
+                                <li>Prices are exclusive of GST (18% applicable on IT services in India).</li>
+                                <li>Third-party costs such as premium plugins, stock images, API subscriptions, and ad spend are not included unless explicitly stated.</li>
+                                <li>Hosting, domain, and maintenance costs recur annually and are subject to changes by respective service providers.</li>
+                                <li>A formal written quotation will be provided after a detailed requirements discussion.</li>
+                                <li>Source reference: <a href="https://www.aerobusinesssolutions.com/blog/website-cost-india/" style="color: #62348D;">Aero Business Solutions — Website Cost India Guide 2026</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- FOOTER BAR -->
+                        <div style="background: linear-gradient(135deg, #62348D 0%, #3a1a5e 100%); border-radius: 8px; padding: 14px 20px;">
+                            <table style="width: 100%; border: none;">
+                                <tr>
+                                    <td style="border: none; padding: 0; vertical-align: middle;">
+                                        <div style="color: rgba(255,255,255,0.9); font-size: 12px; font-weight: 600;">Your Company Name</div>
+                                        <div style="color: rgba(255,255,255,0.6); font-size: 11px;">www.yourcompany.com · info@yourcompany.com · +91 98765 43210</div>
+                                    </td>
+                                    <td style="border: none; padding: 0; text-align: right; vertical-align: middle;">
+                                        <div style="color: rgba(255,255,255,0.5); font-size: 10px;">Document generated by Odoo ERP</div>
+                                        <div style="color: rgba(255,255,255,0.5); font-size: 10px;">India Web Development Pricing Reference · 2026</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
