@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="base.main_company" model="res.company">
+            <field name="xapp_quotation_terms"><![CDATA[
+<div class="xapp_terms">
+    <ol>
+        <li><b>Scope of Work</b><br/>The project scope is defined in the proposed service items. Any additional features will be billed separately.</li>
+        <li><b>Project Timeline</b><br/>The timeline commences upon receipt of the advance payment and all required resources from the client.</li>
+        <li><b>Payment Terms</b><br/>Payments are to be made according to the payment plan attached. Late payments may incur a penalty.</li>
+        <li><b>Refund &amp; Cancellation</b><br/>Advance payments are non-refundable once work has commenced.</li>
+        <li><b>Client Responsibilities</b><br/>The client must provide necessary content, branding guidelines, and timely feedback.</li>
+        <li><b>Revisions</b><br/>The quote includes up to 2 rounds of minor revisions per design phase. Major layout changes will be charged extra.</li>
+        <li><b>IP Rights</b><br/>Upon full payment, the intellectual property rights of the custom code and design are transferred to the client.</li>
+        <li><b>Third-Party Services</b><br/>Costs for third-party tools, plugins, or stock images are not included unless specified.</li>
+        <li><b>Maintenance &amp; Support</b><br/>A 30-day bug-fixing warranty is provided post-launch. Extended maintenance requires an AMC.</li>
+        <li><b>Limitation of Liability</b><br/>Xapp shall not be liable for indirect damages or loss of profits arising from the use of the delivered software.</li>
+        <li><b>Confidentiality</b><br/>Both parties agree to keep all project details and proprietary information confidential.</li>
+        <li><b>Termination</b><br/>Either party may terminate the agreement with a 15-day written notice. The client will be billed for work completed up to that date.</li>
+        <li><b>Governing Law</b><br/>This agreement shall be governed by the laws of India.</li>
+        <li><b>Acceptance</b><br/>Signing this quotation indicates acceptance of all terms and conditions.</li>
+    </ol>
+</div>
+            ]]></field>
+        </record>
+    </data>
+</odoo>

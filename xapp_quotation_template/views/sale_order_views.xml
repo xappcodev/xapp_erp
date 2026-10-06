@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_inherit_xapp" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.xapp</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='validity_date']" position="before">
+                <field name="xapp_development_type"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Payment Plan" name="xapp_payment_plan">
+                    <field name="xapp_payment_plan_ids">
+                        <list editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="percentage"/>
+                            <field name="amount"/>
+                            <field name="currency_id" column_invisible="True"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='note']" position="replace"/>
+            <xpath expr="//page[@name='xapp_payment_plan']" position="after">
+                <page string="Terms and Conditions" name="terms_conditions">
+                    <field name="xapp_quotation_terms" nolabel="1" placeholder="Terms and conditions..."/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
